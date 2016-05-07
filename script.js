@@ -15,6 +15,23 @@ findGitUserApp.controller("SearchCtrl", function($scope, $http){
 		    // when the response is available
 		    $scope.profileData = response.data;
 		    console.log("A response", response);
+		    $scope.getRepos($scope.profileData.repos_url);
+		  }, function errorCallback(response) {
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		    console.log("we got an error", response);
+		  });
+	}
+	$scope.getRepos = function(repoURL){
+		$http({
+			method: 'GET',
+			url: repoURL
+		}).then(function successCallback(response) {
+		    // this callback will be called asynchronously
+		    // when the response is available
+		    $scope.repos = response.data;
+		    console.log("A response", response);
+
 		  }, function errorCallback(response) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.

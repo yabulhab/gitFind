@@ -16,7 +16,14 @@
 		<button ng-click="callHttp()">Go!</button>
 		{{profileData.name}}
 		{{profileData.id}}
-		<img src="{{profileData.avatar_url}}"/>				
+		<img src="{{profileData.avatar_url}}"/>	
+		
+		<div ng-repeat="repo in repos">
+			<h3>{{repo.name}}</h3>
+			<p>{{repo.description}}</p>
+			<hr>
+		</div>
+
 	</div>
 
 
