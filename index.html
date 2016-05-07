@@ -13,15 +13,13 @@
 
 	<div ng-controller="SearchCtrl">
 		<input ng-model="foo" id="search"/>
-		<button>Go!</button>
-		{{foo}}
+		<button ng-click="callHttp()">Go!</button>
+		{{profileData.name}}
+		{{profileData.id}}
+		<img src="{{profileData.avatar_url}}"/>				
 	</div>
 
-	<div ng-controller="SomethingElseCtrl">
-		<input ng-model="foo" id="search"/>
-		<button>Go!</button>
-		{{foo}}
-	</div>
+
 
 </body>
 
